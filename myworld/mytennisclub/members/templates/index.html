@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>  
+    <head>
+        <title>My First Django Page</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'main' %}">My Tennis Club</a>
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
+                    <a class="nav-link" href="{% url 'members' %}">Members</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container py-5">
+
+        <h1>My First Django Page</h1>
+        <p>I want to understand the basic of frontend and backed
+            where i can use the django framework to create a web application. I have created a simple page using django framework and i want to learn more about it. I will be adding more features to this page in the future.
+            it will include showing the member in databse and in[uting them]
+        </p>
+    </div>
+    </body>
+</html>

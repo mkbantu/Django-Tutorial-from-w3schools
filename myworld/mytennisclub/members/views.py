@@ -10,3 +10,7 @@ def members(request):
     'members': mem,
   }
   return HttpResponse(template.render(context, request))
+
+def main(request):
+  template = loader.get_template('index.html')
+  return HttpResponse(template.render({}, request))
