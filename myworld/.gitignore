@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments and local secrets
+venv/
+.venv/
+bin/
+include/
+lib/
+lib64
+pyvenv.cfg
+.env
+
+# Local database
+db.sqlite3
