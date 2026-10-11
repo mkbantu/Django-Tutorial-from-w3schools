@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asia Tours Agency</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Asia Tours Agency</h1>
+    </header>
+    <main>
+        <h2>people and their tours</h2>
+        <ul>
+            {% for tour in mytours %}
+                <li>{{ tour.name }} - {{ tour.origin_country }} to {{ tour.destination_country }} - ${{ tour.price }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>    
+        <p>&copy; 2024 Asia Tours Agency. All rights reserved.</p>
+    </footer>       
+</body>
+</html>
