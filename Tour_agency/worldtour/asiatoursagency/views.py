@@ -5,4 +5,4 @@ from .models import tour
 
 def index(request):
     mytours = tour.objects.all()
-    return render(request, 'index.html', {'mytours': mytours})
+    return render(request, 'asia/index.html', {'mytours': mytours})

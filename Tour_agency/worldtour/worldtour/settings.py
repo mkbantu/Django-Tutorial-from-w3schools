@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'asiatoursagency.apps.AsiatoursagencyConfig',
+    'africatour.apps.AfricatourConfig',
+    'homeapp.apps.HomeappConfig'
 ]
 
 MIDDLEWARE = [
