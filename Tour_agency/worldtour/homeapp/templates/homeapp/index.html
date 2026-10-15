@@ -1,21 +1,139 @@
-<!-- homepage for all app showing all tours in different regions -->
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover unforgettable trips with World Tour Agency. Explore tours across Africa and Asia.">
+    <title>World Tour Agency | Explore the world</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        :root {
+            --tour-green: #155b45;
+            --tour-cream: #f7f5ef;
+        }
+
+        body {
+            color: #18352c;
+            font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        }
+
+        .navbar-brand,
+        .text-tour-green {
+            color: var(--tour-green);
+        }
+
+        .btn-tour {
+            background-color: var(--tour-green);
+            border-color: var(--tour-green);
+            color: #fff;
+        }
+
+        .btn-tour:hover {
+            background-color: #104633;
+            border-color: #104633;
+            color: #fff;
+        }
+
+        .hero {
+            background-color: var(--tour-cream);
+        }
+
+        .hero-image {
+            min-height: 340px;
+            object-fit: cover;
+        }
+
+        .destination-image {
+            height: 230px;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'africa_tours' %}">African Tours</a></li>
-            <li><a href="{% url 'asia_tours' %}">Asian Tours</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-white py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="{% url 'home' %}">World<span class="text-dark">Tour</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'africa_tours' %}">African Tours</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'asia_tours' %}">Asian Tours</a></li>
+                    <li class="nav-item"><a class="btn btn-tour rounded-pill px-4 ms-lg-2" href="#destinations">Explore destinations</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <h1>Welcome to Our Tour Agency</h1>
-    <p>We offer amazing tours to different regions around the world.</p>
+
+    <main>
+        <section class="hero py-5">
+            <div class="container py-lg-4">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <p class="text-uppercase fw-semibold small text-tour-green mb-3">Your next adventure starts here</p>
+                        <h1 class="display-4 fw-bold mb-3">See more of the world.</h1>
+                        <p class="lead text-secondary mb-4">Discover remarkable places, meet new people, and make memories that stay with you.</p>
+                        <a class="btn btn-tour btn-lg rounded-pill px-4" href="#destinations">Find your destination</a>
+                    </div>
+                    <div class="col-lg-7">
+                        <img class="img-fluid w-100 rounded-4 hero-image shadow-sm"
+                             src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"
+                             alt="Elephants walking across an African savanna">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="destinations">
+            <div class="container py-lg-4">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+                    <div>
+                        <p class="text-uppercase fw-semibold small text-tour-green mb-2">Choose your journey</p>
+                        <h2 class="display-6 fw-bold mb-0">Explore our destinations</h2>
+                    </div>
+                    <p class="text-secondary mb-0">Start with a region. Let the adventure unfold.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img class="card-img-top destination-image"
+                                 src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                                 alt="Wildlife in an African national park">
+                            <div class="card-body p-4">
+                                <p class="small text-uppercase fw-semibold text-tour-green mb-2">Wildlife, landscapes &amp; culture</p>
+                                <h3 class="card-title h4 fw-bold">African adventures</h3>
+                                <p class="card-text text-secondary">Experience unforgettable landscapes and discover the rich character of Africa.</p>
+                                <a class="btn btn-outline-success rounded-pill px-4" href="{% url 'africa_tours' %}">Discover African tours</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <article class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                            <img class="card-img-top destination-image"
+                                 src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+                                 alt="Mountain scenery in Asia">
+                            <div class="card-body p-4">
+                                <p class="small text-uppercase fw-semibold text-tour-green mb-2">Temples, cities &amp; scenery</p>
+                                <h3 class="card-title h4 fw-bold">Asian discoveries</h3>
+                                <p class="card-text text-secondary">Find your next favourite place among Asia's vibrant destinations and quiet escapes.</p>
+                                <a class="btn btn-outline-success rounded-pill px-4" href="{% url 'asia_tours' %}">Discover Asian tours</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-top py-4">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+            <span class="fw-semibold text-tour-green">WorldTour</span>
+            <span class="text-secondary small">&copy; 2026 World Tour Agency. Explore responsibly.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
